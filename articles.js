@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 const router = express.Router();
 import { v4 as uuidv4 } from 'uuid';
 
@@ -48,8 +48,21 @@ router.put('/:id/update', (req, res) => {
 
 //!!!for different purposes, after the ids different params are used. If these params are not used while testing, process will throw error.        During testing, name and article are the 2 keys which need to be submitted by the user.!!!
 
-//!!!I have failed to incorporte the mondo Db (database) due to sheer lack of time. I have no expectations for this lack of efficiency to be accounted for during the judgement process but do note that I have infact tried my best...!!!
 
+export default router;
 
+*/ 
+//Above Prototype: without the use of db.
+
+import express from 'express'
+const router = express.Router();
+
+import articleC from './articleControllers.js'
+
+router.get('/', articleC.index);
+router.post('/find', articleC.find);
+router.post('/create', articleC.create);
+router.post('/update', articleC.update);
+router.post('/delete', articleC.destroy);
 
 export default router;
